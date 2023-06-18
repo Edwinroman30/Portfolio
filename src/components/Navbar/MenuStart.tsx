@@ -8,16 +8,16 @@ export default function MenuStart(){
             <Link className="navbar-item" to="/">
                 Inicio
             </Link>
-            <Link className="navbar-item" to={"/about"}>
+            <Link className="navbar-item" to={"/sobre-mi"}>
                 Sobre mi
             </Link>
-            <Link className="navbar-item" to={"/porfolio"}>
+            <Link className="navbar-item" to={"/portafolio"}>
                 Portafolio
             </Link>
             <Link className="navbar-item" to={"/blog"}>
                 Blog
             </Link>
-            <Link className="navbar-item" to={"/contact"}>
+            <Link className="navbar-item" to={"/contacto"}>
                 Contacto
             </Link>
         </div>
