@@ -1,7 +1,8 @@
-import {useContext} from 'react';
 import './HomePage.css';
+import {useContext} from 'react';
 import AppContext from '../context/AppContext';
 import LastesWorkSection from '../components/LastesWorkSection';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   
@@ -14,18 +15,20 @@ function HomePage() {
 
          <div className="column">
             <h1 className='title is-2'>Hi there😁👋, I’m Edwin.</h1>
-            <p className='presentation-description'>
-              {isSpanish ? `Desarrollador de software con aptitudes en el desarrollo de aplicaciones: visualmente amigable, escalables, testeables, multiplataforma y con las mejores prácticas y estándares en la Ingeniería de Software.`
+            <blockquote className='presentation-description'>
+              {isSpanish ? `¡Desarrollador de software con aptitudes en el desarrollo de aplicaciones: visualmente amigable, escalables y adaptadas a sus necesidades!`
                         : `A Backend Sofware Engineer/Developer with decents skills in front-end development, also a passionate of technologies world and how we used to solve real world situations.`}
-            </p>
+            </blockquote>
             
             <div className="buttons my-4">
-              <button className='button is-primary is-outlined'>
+              <Link to={"sobre-mi"} className='button is-primary '>
                 { isSpanish ? `Conoceme +` : `More about me` }
-              </button>
-              <button className='button is-info is-outlined'>
-                { isSpanish ? `Dale vida a sus ideas` : `Start a project` }
-              </button>
+              </Link>
+              {false && 
+                <button className='button is-info is-outlined'>
+                  { isSpanish ? `Dale vida a sus ideas` : `Start a project` }
+                </button>
+              }
             </div>
          </div>
 
