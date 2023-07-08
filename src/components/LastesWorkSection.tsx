@@ -12,9 +12,7 @@ const projects : Array<IProject> = [
     name : 'Domedica APP',
     platformEnvironment : "Web - Móvil - Web Services",
     presentationImageUrl : "./img/domedica-public-login.png",
-    description : `Domedica App tiene como objetivo 
-    ser un medio que les permita a los ciudadanos mediante el uso de sistemas 
-    de información coordinados tener una herramienta en donde consultar 
+    description : `Domedica App es una herramienta en donde consultar 
     información sobre centros hospitalarios de manera sencilla, brindando una
     puerta de enlace entre dichos centros de interés y a los servicios que estos se 
     encuentran buscando.`
@@ -24,9 +22,7 @@ const projects : Array<IProject> = [
     name : 'Defensa Civil APP',
     platformEnvironment : "Web - Móvil",
     presentationImageUrl : "./img/defensacivil-historia.png",
-    description : `Este proyecto busca proveerle al usuario(ciudadano) un medio de consulta portable e accesible sobre la Institución de la Defensa
-    Civil de la República Dominicana, cuyas funcionalidades persiguen el brindar información sobre los albergues más cercanos, miembros, noticias y 
-    hasta formalizar reportes de incidencias.` 
+    description : `Este proyecto persigue brindar a los ciudadanos información sobre los albergues de emergencia más cercanos, miembros, noticias y hasta formalizar reportes de incidencias para que el equipo de la DC pueda socorrerles.` 
   },
 ]
 

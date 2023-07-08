@@ -5,6 +5,7 @@ import SkeletonPage from './pages/SkeletonPage';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 import ErrorPage from './pages/ErrorPage';
+import AboutPage from './pages/AboutPage';
 
 const appBrowserRouter = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const appBrowserRouter = createBrowserRouter([
       {
         index : true,
         element: <HomePage/>
+      },
+      {
+        path: '/sobre-mi',
+        element: <AboutPage/>
       },
       {
         path: '*',

@@ -33,7 +33,7 @@ const ProjectCard : React.FC<ProjectCardProp> = ({project}) => {
 
             <footer className="card-footer">
                 <div className="card-footer-item">
-                    <button className='button is-disable'>Seguir leyendo</button>
+                    <button className='button is-disable'>Conocer más</button>
                 </div>
             </footer>
         </div>
