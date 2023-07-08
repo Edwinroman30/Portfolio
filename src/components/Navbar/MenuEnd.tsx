@@ -1,6 +1,5 @@
 import {Link} from 'react-router-dom';
-import {SlSocialLinkedin, SlSocialInstagram} from 'react-icons/sl';
-import {BsGithub} from 'react-icons/bs';
+import {BsGithub, BsInstagram, BsLinkedin} from 'react-icons/bs';
 
 export default function MenuEnd(){
 
@@ -12,7 +11,7 @@ export default function MenuEnd(){
                     <p className="control">
                         <a className="bd-tw-button button" data-social-network="Linkedin" data-social-action="post" data-social-target="https://www.linkedin.com" target="_blank" href="https://www.linkedin.com/in/edwin-roman-9278a6214/">
                             <span className="icon">
-                                <SlSocialLinkedin/>
+                                <BsLinkedin/>
                             </span>
                         </a>
                     </p>
@@ -20,7 +19,7 @@ export default function MenuEnd(){
                     <p className="control">
                         <a className=" button" data-social-network="Instagram" data-social-action="story" data-social-target="https://www.instagram.com" target="_blank" href="https://www.instagram.com/edwinroman30/">
                             <span className="icon">
-                                <SlSocialInstagram/>
+                                <BsInstagram/>
                             </span>
                         </a>
                     </p>
