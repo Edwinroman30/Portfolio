@@ -1,12 +1,12 @@
 import './HomePage.css';
 import {useContext} from 'react';
-import AppContext from '../context/AppContext';
+import LanguageContext from '../context/LanguageContext';
 import LastesWorkSection from '../components/LastesWorkSection';
 import { Link } from 'react-router-dom';
 
 function HomePage() {
   
-  const {isSpanish} = useContext(AppContext);
+  const {language} = useContext(LanguageContext);
 
   return (
     <div>
@@ -16,17 +16,16 @@ function HomePage() {
          <div className="column">
             <h1 className='title is-2'>Hi there😁👋, I’m Edwin.</h1>
             <blockquote className='presentation-description'>
-              {isSpanish ? `¡Desarrollador de software con aptitudes en el desarrollo de aplicaciones: visualmente amigable, escalables y adaptadas a sus necesidades!`
-                        : `A Backend Sofware Engineer/Developer with decents skills in front-end development, also a passionate of technologies world and how we used to solve real world situations.`}
+              {language.home.initialDescription}
             </blockquote>
             
             <div className="buttons my-4">
               <Link to={"sobre-mi"} className='button is-primary '>
-                { isSpanish ? `Conoceme +` : `More about me` }
+                 {language.home.aboutMeButtonText}
               </Link>
               {false && 
                 <button className='button is-info is-outlined'>
-                  { isSpanish ? `Dale vida a sus ideas` : `Start a project` }
+                   {language.home.callToActionButtonText}
                 </button>
               }
             </div>
@@ -49,11 +48,11 @@ function HomePage() {
             <p className="subtitle">
                Proverbio africano
             </p>
-            <button className='button'>💡 ¿Tienes una idea?</button>
+            <button className='button'>{language.home.callToActionButtonText}</button>
           </div>
       </section>
 
-      <LastesWorkSection isSpanish={isSpanish} />
+      <LastesWorkSection/>
       
     </div>
   )

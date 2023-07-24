@@ -1,12 +1,33 @@
 import {Link} from 'react-router-dom';
-import {BsGithub, BsInstagram, BsLinkedin} from 'react-icons/bs';
+import {BsGithub, BsInstagram, BsLinkedin, BsGlobe} from 'react-icons/bs';
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 
 export default function MenuEnd(){
+
+   const {handlerLanguage} = useContext(LanguageContext);
 
     return(
         <div className="navbar-end">
 
             <div className="navbar-item">
+                <div className="field is-grouped">
+                    <div className="control has-icons-left">
+                        <div className="select is-small">
+                            <select onChange={handlerLanguage}>
+                                <option value={"es"}>ES</option>
+                                <option value={"en"}>EN</option>
+                            </select>
+                        </div>
+                        <span className="icon is-small is-left">
+                            <BsGlobe/>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div className="navbar-item">
+
                 <div className="field is-grouped">
                     <p className="control">
                         <a className="bd-tw-button button" data-social-network="Linkedin" data-social-action="post" data-social-target="https://www.linkedin.com" target="_blank" href="https://www.linkedin.com/in/edwin-roman-9278a6214/">

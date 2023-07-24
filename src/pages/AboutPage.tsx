@@ -1,7 +1,7 @@
 import './AboutPage.css';
-import uasdLogo from '../assets/logo_uasd.svg';
-import ondpLogo from '../assets/logo_ondp.png';
-import itfamLogo from '../assets/logo_itfam.jpg'
+import uasdLogo from '../assets/img/logo_uasd.svg';
+import ondpLogo from '../assets/img/logo_ondp.png';
+import itfamLogo from '../assets/img/logo_itfam.jpg';
 
 function AboutPage() {
 
@@ -45,7 +45,7 @@ function AboutPage() {
                 <div className="level-item has-text-centered">
                     <div>
                         <img src={itfamLogo} ></img>
-                        <div className='content'><small>Proffesor Assistance - from 2022 to 2022</small></div>
+                        <div className='content'><small>Professor Assistant - from 2022 to 2022</small></div>
                     </div>
                 </div>
 
@@ -60,14 +60,7 @@ function AboutPage() {
         </article>
 
         <article className="section is-medium">
-            <h1 className='title is-3 text-right'>📚 Educación:</h1>
-            <hr></hr>
-
-            
-        </article>
-
-        <article className="section is-medium">
-            <h1 className='title is-3 text-left mt-3'>🎢 Mas allá del trabajo:</h1>
+            <h1 className='title is-3 text-right mt-3'>🎢 Mas allá del trabajo:</h1>
             <hr></hr>
 
             <div className="columns" style={{textAlign:"center"}}>
@@ -85,7 +78,6 @@ function AboutPage() {
                 </div>
             </div>
         </article>
-
 
     </section>
   );

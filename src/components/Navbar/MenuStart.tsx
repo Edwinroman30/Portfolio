@@ -1,24 +1,28 @@
 import {Link} from 'react-router-dom';
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 
 
 export default function MenuStart(){
 
+    const {language} = useContext(LanguageContext);
+
     return(
        <div className="navbar-start m-auto">
             <Link className="navbar-item" to="/">
-                Inicio
+               {language.menu.home}
             </Link>
             <Link className="navbar-item" to={"/sobre-mi"}>
-                Sobre mi
+               {language.menu.about}
             </Link>
             <Link className="navbar-item" to={"/portafolio"}>
-                Portafolio
+               {language.menu.porfolio}
             </Link>
             <Link className="navbar-item" to={"/blog"}>
-                Blog
+               {language.menu.blog}
             </Link>
             <Link className="navbar-item" to={"/contacto"}>
-                Contacto
+               {language.menu.contact}
             </Link>
         </div>
     );

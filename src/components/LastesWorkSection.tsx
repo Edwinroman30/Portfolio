@@ -1,10 +1,8 @@
 import React, {PropsWithChildren} from 'react'
 import ProjectCard from './ProjectCard';
 import IProject from './types/IProject';
-
-interface ILanguageProps extends PropsWithChildren{
-    isSpanish : boolean
-};
+import { useContext } from 'react';
+import LanguageContext from '../context/LanguageContext';
 
 const projects : Array<IProject> = [
   {
@@ -26,12 +24,14 @@ const projects : Array<IProject> = [
   },
 ]
 
-const LastesWorkSection : React.FC<ILanguageProps> = ({isSpanish}) => {
+const LastesWorkSection : React.FC<PropsWithChildren> = () => {
  
+    const {language} = useContext(LanguageContext);
+
     return (
        <section className="section is-medium">
           <h2 className='has-text-centered subtitle is-5'>
-            {isSpanish ? "Algunos de mis últimos proyectos:".toUpperCase() : "Some of my lastest works:".toUpperCase() }
+            {language.home.projectSectionTitle.toUpperCase()}
           </h2>
           
           <hr className='navbar-divider'></hr>
