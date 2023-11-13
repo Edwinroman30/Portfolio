@@ -6,8 +6,11 @@ function Footer() {
     <footer className="footer">
         <div className="content has-text-centered">
             <p>
-                <strong>©2022 - {new Date().getUTCFullYear()} </strong> by <a href="/about">Edwin Roman</a>.
+                <strong>©2022 - {new Date().getUTCFullYear()} </strong> 
             </p>
+            <p>Elaborado por/by: 
+              <a href="/sobre-mi"> Edwin Roman</a>.
+            </p> 
         </div>
     </footer>
   )
