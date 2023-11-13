@@ -11,7 +11,7 @@ function HomePage() {
   return (
     <div>
 
-      <section className='section columns is-vcentered'>
+      <section className='section is-medium columns is-vcentered'>
 
          <div className="column">
             <h1 className='title is-2'>Hi there😁👋, I’m Edwin.</h1>
@@ -20,7 +20,7 @@ function HomePage() {
             </blockquote>
             
             <div className="buttons my-4">
-              <Link to={"sobre-mi"} className='button is-primary '>
+              <Link to={"sobre-mi"} className='button is-info '>
                  {language.home.aboutMeButtonText}
               </Link>
               {false && 
@@ -32,13 +32,13 @@ function HomePage() {
          </div>
 
          <div className="column">
-            <figure className="image is-square">
-              <img className="is-rounded" src="./img/niwed.png" />
+            <figure>
+              <img className="image banner-image" src="./img/reciving-medal.JPG" />
             </figure>
          </div>
       </section>
 
-      <section className="hero is-primary">
+      <section className="hero is-info">
           <div className="hero-body">
             <p className="title">
               <blockquote>
