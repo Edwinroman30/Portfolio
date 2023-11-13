@@ -46,7 +46,7 @@ export default function MenuEnd(){
                     </p>
 
                     <p className="control">
-                        <Link className=" button" data-social-network="Github" data-social-action="repository" data-social-target="https://github.com" target="_blank" to={"/github"}>
+                        <Link className=" button" data-social-network="Github" data-social-action="repository" data-social-target="https://github.com" target="_blank" to={"https://github.com/edwinroman30"}>
                             <span className="icon">
                                 <BsGithub/>
                             </span>
