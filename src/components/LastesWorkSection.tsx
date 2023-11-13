@@ -3,6 +3,7 @@ import ProjectCard from './ProjectCard';
 import IProject from './types/IProject';
 import { useContext } from 'react';
 import LanguageContext from '../context/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const projects : Array<IProject> = [
   {
@@ -22,6 +23,13 @@ const projects : Array<IProject> = [
     presentationImageUrl : "./img/defensacivil-historia.png",
     description : `Este proyecto persigue brindar a los ciudadanos información sobre los albergues de emergencia más cercanos, miembros, noticias y hasta formalizar reportes de incidencias para que el equipo de la DC pueda socorrerles.` 
   },
+  {
+    id : 'p00022',
+    name : 'Defensa Civil APP',
+    platformEnvironment : "Web - Móvil",
+    presentationImageUrl : "./img/defensacivil-historia.png",
+    description : `Este proyecto persigue brindar a los ciudadanos información sobre los albergues de emergencia más cercanos, miembros, noticias y hasta formalizar reportes de incidencias para que el equipo de la DC pueda socorrerles.` 
+  },
 ]
 
 const LastesWorkSection : React.FC<PropsWithChildren> = () => {
@@ -29,22 +37,29 @@ const LastesWorkSection : React.FC<PropsWithChildren> = () => {
     const {language} = useContext(LanguageContext);
 
     return (
-       <section className="section is-medium">
-          <h2 className='has-text-centered subtitle is-5'>
+       <section className="section">
+          <h2 className='has-text-centered subtitle '>
             {language.home.projectSectionTitle.toUpperCase()}
           </h2>
           
           <hr className='navbar-divider'></hr>
           
-          <article className='columns is-3 my-4'>
+          <article className='columns mt-6 is-flex-wrap-wrap'>
             {projects.map(elem => 
             (
-              <div className="column is-4" key={elem.id}>
+              <div className="column is-primary is-half p-3 mb-6" key={elem.id}>
                 <ProjectCard project={elem}></ProjectCard>
               </div>
             ))}
           </article>
-
+           
+          <article className="hero">
+            <div className="hero-body has-text-centered">
+              <Link to={"/portafolio"} className="button is-info">
+                Conoce más...
+              </Link>
+            </div>
+           </article>
        </section>
     );
 
