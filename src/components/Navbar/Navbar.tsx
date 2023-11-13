@@ -9,7 +9,7 @@ function Navbar() {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
-    <nav className="navbar is-primary navbar is-fixed-top p-3" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-info navbar is-fixed-top p-3" role="navigation" aria-label="main navigation">
         <NavbarBrand toggleMenuAction={()=> { setShowMenu(!showMenu)} } />
         <NavbarMenu showMenu={showMenu} />
     </nav>
@@ -23,7 +23,7 @@ interface INavbarMenuProps extends React.PropsWithChildren{
 
 const NavbarMenu : React.FC<INavbarMenuProps> = ({showMenu}) =>{
 
-    const navMenuRef = useRef(null);
+    const navMenuRef = useRef<HTMLDivElement>(null);
 
     useEffect(()=>{
         navMenuRef.current?.classList.toggle('is-active');
