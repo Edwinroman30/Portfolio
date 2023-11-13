@@ -1,7 +1,7 @@
 import './ProjectCard.css';
 import React,{PropsWithChildren} from 'react';
 import IProject from './types/IProject';
-
+import {AiOutlineLink} from 'react-icons/ai';
 
 interface ProjectCardProp extends PropsWithChildren{
     project : IProject;
@@ -11,29 +11,32 @@ const ProjectCard : React.FC<ProjectCardProp> = ({project}) => {
 
     
     return (
-        <div className="card">
-            <div className="card-image">
-                <figure className="image is-4by3">
-                    <img src={project.presentationImageUrl} alt={project.description} />
-                </figure>
-            </div>
+        <div className="is-flex is-flex-direction-column">
 
-            <div className="card-content">
-                <div className="media">
-                    <div className="media-content">
+            <div className="">
+                <div className="media mb-3">
+                    <div className="media-content has-text-centered">
                         <p className="title is-4">{project.name}</p>
                         <p className="subtitle is-6">{project.platformEnvironment}</p>
                     </div>
                 </div>
         
-                <div className="content">
+                <div className="content project-paragraph p-4 ">
                    {project.description}
                 </div>
             </div>
 
-            <footer className="card-footer">
+            <div className="container-project-img">
+                <figure className="project-img">
+                    <img src={project.presentationImageUrl} alt={project.description} />
+                </figure>
+            </div>
+
+            <footer className="">
                 <div className="card-footer-item">
-                    <button className='button is-disable'>Conocer más</button>
+                    <button className='button is-medium is-disable'>
+                        <AiOutlineLink></AiOutlineLink>
+                    </button>
                 </div>
             </footer>
         </div>
