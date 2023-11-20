@@ -1,5 +1,5 @@
 import './HomePage.css';
-import {useContext} from 'react';
+import React, { useContext, useRef } from 'react';
 import LanguageContext from '../context/LanguageContext';
 import LastesWorkSection from '../components/LastesWorkSection';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,18 @@ import { Link } from 'react-router-dom';
 function HomePage() {
   
   const {language} = useContext(LanguageContext);
+  const imgToggler = useRef<boolean>(false);
+
+  const handlerHover = (e : React.MouseEvent<HTMLImageElement>) => {
+    
+    if(imgToggler.current)
+      e.currentTarget.setAttribute("src","./img/reciving-diploma.JPG");
+    else
+      e.currentTarget.setAttribute("src","./img/reciving-medal.JPG");
+
+    imgToggler.current = !imgToggler.current; 
+  };
+
 
   return (
     <div>
@@ -14,7 +26,7 @@ function HomePage() {
       <section className='section is-medium columns is-vcentered'>
 
          <div className="column">
-            <h1 className='title is-2'>Hi there😁👋, I’m Edwin.</h1>
+            <h1 className='title is-2'>{language.home.greatingTitle}</h1>
             <blockquote className='presentation-description'>
               {language.home.initialDescription}
             </blockquote>
@@ -32,13 +44,13 @@ function HomePage() {
          </div>
 
          <div className="column">
-            <figure>
-              <img className="image banner-image" src="./img/reciving-medal.JPG" />
+            <figure >
+              <img className="image banner-image" src="./img/reciving-medal.JPG"  onMouseEnter={handlerHover} />
             </figure>
          </div>
       </section>
 
-      <section className="hero is-info">
+       <section className="hero is-info">
           <div className="hero-body">
             <p className="title">
               <blockquote>
@@ -50,10 +62,13 @@ function HomePage() {
             </p>
             <button className='button'>{language.home.callToActionButtonText}</button>
           </div>
-      </section>
+      </section> 
 
-      <LastesWorkSection/>
+ {/*
+      <LastesWorkSection/> 
+  */}
       
+
     </div>
   )
 }
