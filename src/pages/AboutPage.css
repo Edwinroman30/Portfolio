@@ -14,3 +14,28 @@
 .text-right{
     text-align: right;
 }
+
+.grid-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: minmax(100px,150px);
+    justify-content: center;
+    align-items: center;
+    column-gap: 3rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 0.02rem solid #33333310;
+}
+
+.grid-container > figure{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (width <= 768px) {
+    .grid-container{
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+    }
+}
