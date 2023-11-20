@@ -50,8 +50,8 @@ const initialLanguage : AdmitedLanguagesType = {
             contact: "Contacto"
         },
         home : {
-            greatingTitle: "Hi there😁👋, I’m Edwin.",
-            initialDescription: "¡Desarrollador de software con aptitudes en el desarrollo de aplicaciones: visualmente amigable, escalables y adaptadas a sus necesidades!",
+            greatingTitle: "Bienvenid@s😁👋, Soy Edwin!",
+            initialDescription: "¡Desarrollador de software con aptitudes en el desarrollo de aplicaciones: visualmente amigable, escalables y adaptadas a sus necesidades! Crear soluciones útiles, es lo mio!",
             aboutMeButtonText: "Conoceme +",
             bannerText: "“Si quieres ir rápido, ve solo. Si quieres llegar lejos, ve acompañado.”",
             bannerTextAutor: "Proverbio africano",
@@ -81,7 +81,7 @@ const initialLanguage : AdmitedLanguagesType = {
             aboutMeButtonText: "More about me",
             bannerText: "“Si quieres ir rápido, ve solo. Si quieres llegar lejos, ve acompañado.”",
             bannerTextAutor: "Proverbio africano",
-            callToActionButtonText: "Start a project!",
+            callToActionButtonText: "💡 Start a project!",
             projectSectionTitle: "Some of my lastest works:"
         },
         about:{
