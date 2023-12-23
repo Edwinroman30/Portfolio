@@ -3,6 +3,10 @@ import uasdLogo from '../assets/img/logo_uasd.svg';
 import ondpLogo from '../assets/img/logo_ondp.png';
 import itfamLogo from '../assets/img/logo_itfam2.jpg';
 import { IExperice } from '../types/experices';
+import { IoIosDocument } from "react-icons/io";
+import { useRef } from 'react';
+import IBadgeInfo from '../components/types/IBadgeInfo';
+import BadgeComponent from '../components/badge/BadgeComponent';
 
 let experices : IExperice[] = [
   {
@@ -32,6 +36,24 @@ experices = experices.sort((x, y) => x.endDate > y.endDate ? -1 : 1);
 
 function AboutPage() {
   
+  const badgeRef = useRef<IBadgeInfo[]>([
+    {
+       certificateImageUrl: "./img/badges/remote-work-certification.png",
+       certificateName: "Remote Work Professional Certification - RWPC™",
+       issuerName: "CertiProf"
+    },
+    {
+        certificateImageUrl: "./img/badges/scrum-certification.png",
+        certificateName: "Scrum Foundation Professional Certification - SFPC™ (v2020)",
+        issuerName: "CertiProf"
+    },
+    {
+        certificateImageUrl: "./img/badges/it-essential-cisco-certification.png",
+        certificateName: "IT Essentials - Networking Academy",
+        issuerName: "Cisco"
+     }
+  ]);
+
   return (
     <section className='container'>
         
@@ -41,16 +63,15 @@ function AboutPage() {
             <div className="columns">
 
                 <div className="column">
-                    <figure className="image is-5by3 v-centered">
-                        <img className='started-image' src="./img/me-talking-in-public.jpg" alt="Edwin Roman into the computer science faculty" />
+                    <figure className="image started-image is-5by3 v-centered">
+                        <img className='image-border' src="./img/me-talking-in-public.jpg" alt="Edwin Roman into the computer science faculty" />
                     </figure>
                 </div>
 
                 <div className="column">
                     <div className="content is-medium">
-                        <p>Edwin Roman es un desarrollador de software que disfruta transformar las operaciones industriales y de nuestro diario vivir, en soluciones adaptativas y confiables.</p>
-                        <p>Desde 2017 cuenta con experiencia en el desarrollo de aplicaciones y sistemas de información. En dicho trayecto, ha tenido la oportunidad de participar en proyectos de TICs, ser de soporte en las actividades administrativas de las empresas y participar en actividades docentes del área.</p>
-                        <p>Él mismo se considera una persona curiosa, proactiva y analítica, cuyos intereses estan en el flujo de aprender y compartir experiencias adquiridas con aquellos interesados.</p>
+                        <p>Desde 2018 cuenta con experiencia en el desarrollo de aplicaciones y sistemas de información. Edwin Roman, desarrollador de software que disfruta transformar las operaciones industriales y de nuestro diario vivir, en soluciones adaptativas y confiables.</p>
+                        <p>Él mismo se considera una persona curiosa, proactiva y analítica, cuyos intereses estan en el constante flujo de aprender y compartir experiencias adquiridas con aquellos interesados.</p>
                     </div>
                 </div>
                 
@@ -63,8 +84,8 @@ function AboutPage() {
 
             <div className='section'>
 
-                {experices.map((data) => (
-                    <div className="grid-container mb-4">
+                {experices.map((data, idx) => (
+                    <div className="grid-container mb-4" key={`${idx}-${data.companyName}`}>
                         <figure>
                             <img src={data.companyLogoURL} style={{maxWidth:'100%', maxHeight:'150px'}}></img>
                         </figure>
@@ -78,7 +99,32 @@ function AboutPage() {
                 ))}
 
             </div>
+            
+            <div className="text-center">
+                <button className="button is-medium is-info">
+                    <IoIosDocument></IoIosDocument>
+                     Currilucum (CV)
+                </button>
+            </div>
 
+        </article>
+
+        <article className="section">
+            <h1 className='title is-3 text-right mt-3'>🏆 Conocimientos validados por:</h1>
+            <hr></hr>
+
+            <div className="columns is-multiline is-mobile" >
+                {
+                    badgeRef.current.map((data, index) => (
+                     <div className="column is-full-mobile is-half-tablet is-half-desktop" key={`${data.issuerName}-${index}`}>
+                        <BadgeComponent badge={data}></BadgeComponent>
+                     </div>
+                    ))
+                }                         
+            </div>
+            <p className='text-center'>
+                Entre otros diplomas y certificado...
+            </p>
         </article>
 
         <article className="section">
@@ -100,14 +146,14 @@ function AboutPage() {
                 </div>
             </div>
         </article>
- 
+
         <article className='section'>
 
             <h1 className='title is-3 text-right mt-3'>📹 Sobre mi You Tube Channel:</h1>
             
             <div className="columns">
                 <div className="column content is-large">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/TFZWamWmhEk?si=YjxKpXB-KBBIhEYG&amp;start=27" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; allowfullscreen;"></iframe>
+                   <iframe width="100%" height="315" src="https://www.youtube.com/embed/TFZWamWmhEk?si=YjxKpXB-KBBIhEYG&amp;start=27" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; allowfullscreen;"></iframe>
                 </div>
                 <div className="column">
                     <div className="content is-medium">
