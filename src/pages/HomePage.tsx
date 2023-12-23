@@ -1,7 +1,6 @@
 import './HomePage.css';
 import React, { useContext, useRef } from 'react';
 import LanguageContext from '../context/LanguageContext';
-import LastesWorkSection from '../components/LastesWorkSection';
 import { Link } from 'react-router-dom';
 
 function HomePage() {
@@ -23,7 +22,7 @@ function HomePage() {
   return (
     <div>
 
-      <section className='section is-medium columns is-vcentered'>
+      <section className='section columns is-vcentered'>
 
          <div className="column">
             <h1 className='title is-2'>{language.home.greatingTitle}</h1>
@@ -52,21 +51,15 @@ function HomePage() {
 
        <section className="hero is-info">
           <div className="hero-body">
-            <p className="title">
-              <blockquote>
+              <blockquote className='title'>
                 “Si quieres ir rápido, ve solo. Si quieres llegar lejos, ve acompañado.”
               </blockquote>
-            </p>
             <p className="subtitle">
                Proverbio africano
             </p>
             <button className='button'>{language.home.callToActionButtonText}</button>
           </div>
       </section> 
-
- {/*
-      <LastesWorkSection/> 
-  */}
       
 
     </div>
