@@ -1,0 +1,39 @@
+.badge-container{
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    border-bottom: 2px solid #efefef;
+    padding: 16px;
+    margin-bottom: 2px;
+    background: #00e1fa35;
+    border-radius: 16px;
+}
+
+.badge-figure{
+    max-width: 104px;
+    max-height: 104px;
+    display: flex;
+    align-items: center;
+}
+
+.badge-image{
+    max-width: 100%;
+    height: auto;
+}
+
+.badge-body{
+    margin-left: 20px;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    overflow: hidden;
+}
+
+.badge-title{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.badge-issuer{
+   font-weight: 400;
+}
