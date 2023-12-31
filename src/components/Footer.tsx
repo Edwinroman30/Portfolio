@@ -4,7 +4,7 @@ function Footer() {
 
   return (
     <footer className="footer">
-        <div className="content has-text-centered">
+        <div className="has-text-centered">
             <p>
                 <strong>©2022 - {new Date().getUTCFullYear()} </strong> 
             </p>
