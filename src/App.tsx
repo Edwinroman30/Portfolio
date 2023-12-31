@@ -1,6 +1,6 @@
 import './App.css'
 import 'bulma/css/bulma.min.css';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import {createHashRouter, RouterProvider} from 'react-router-dom';
 import AboutPage from './pages/AboutPage';
 import BlogLayoutPage from './pages/blog/BlogLayoutPage';
 import ContactPage from './pages/ContactPage';
@@ -11,7 +11,7 @@ import PostListingPage from './pages/blog/PostListingPage';
 import SkeletonPage from './pages/SkeletonPage';
 import WorkingInProgressPage from './pages/shared/WorkingInProgressPage';
 
-const appBrowserRouter = createBrowserRouter([
+const appBrowserRouter = createHashRouter([
   {
     path : '/',
     element: <SkeletonPage></SkeletonPage>,
