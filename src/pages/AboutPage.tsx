@@ -7,6 +7,7 @@ import { IoIosDocument } from "react-icons/io";
 import { useRef } from 'react';
 import IBadgeInfo from '../components/types/IBadgeInfo';
 import BadgeComponent from '../components/badge/BadgeComponent';
+import curriculumSource from '../assets/pdf/International Base CV - Edwin Roman.pdf';
 
 let experices : IExperice[] = [
   {
@@ -101,10 +102,10 @@ function AboutPage() {
             </div>
             
             <div className="text-center">
-                <button className="button is-medium is-info">
+                <a href={curriculumSource} target="_blank" className="button is-medium is-info">
                     <IoIosDocument></IoIosDocument>
                      Currilucum (CV)
-                </button>
+                </a>
             </div>
 
         </article>
