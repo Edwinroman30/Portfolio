@@ -2,6 +2,9 @@ import './HomePage.css';
 import React, { useContext, useRef } from 'react';
 import LanguageContext from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
+import recivingDiplomaImg from '../assets/img/reciving-diploma.jpg'
+import recivingMedalImg from '../assets/img/reciving-medal.jpg'
+
 
 function HomePage() {
   
@@ -11,9 +14,9 @@ function HomePage() {
   const handlerHover = (e : React.MouseEvent<HTMLImageElement>) => {
     
     if(imgToggler.current)
-      e.currentTarget.setAttribute("src","./img/reciving-diploma.JPG");
+      e.currentTarget.setAttribute("src", recivingDiplomaImg);
     else
-      e.currentTarget.setAttribute("src","./img/reciving-medal.JPG");
+      e.currentTarget.setAttribute("src", recivingMedalImg);
 
     imgToggler.current = !imgToggler.current; 
   };
@@ -44,7 +47,7 @@ function HomePage() {
 
          <div className="column">
             <figure >
-              <img className="image banner-image" src="./img/reciving-medal.JPG"  onMouseEnter={handlerHover} />
+              <img className="image banner-image" src={recivingMedalImg}  onMouseEnter={handlerHover} />
             </figure>
          </div>
       </section>

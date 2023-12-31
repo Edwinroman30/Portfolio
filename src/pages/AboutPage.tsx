@@ -1,13 +1,20 @@
 import './AboutPage.css';
-import uasdLogo from '../assets/img/logo_uasd.svg';
-import ondpLogo from '../assets/img/logo_ondp.png';
-import itfamLogo from '../assets/img/logo_itfam2.jpg';
+import uasdLogo from '../assets/img/Institutions/logo_uasd.svg';
+import ondpLogo from '../assets/img/Institutions/logo_ondp.png';
+import itfamLogo from '../assets/img/Institutions/logo_itfam.jpg';
+import rwCertificate from '../assets/img/badges/remote-work-certification.png';
+import sfCertificate from '../assets/img/badges/scrum-certification.png';
+import itCertificate from '../assets/img/badges/it-essential-cisco-certification.png';
+import curriculumSource from '../assets/pdf/International Base CV - Edwin Roman.pdf';
+import meTalkingImage from '../assets/img/me-talking-in-public.jpg';
+
 import { IExperice } from '../types/experices';
 import { IoIosDocument } from "react-icons/io";
 import { useRef } from 'react';
 import IBadgeInfo from '../components/types/IBadgeInfo';
 import BadgeComponent from '../components/badge/BadgeComponent';
-import curriculumSource from '../assets/pdf/International Base CV - Edwin Roman.pdf';
+
+
 
 let experices : IExperice[] = [
   {
@@ -39,17 +46,17 @@ function AboutPage() {
   
   const badgeRef = useRef<IBadgeInfo[]>([
     {
-       certificateImageUrl: "./img/badges/remote-work-certification.png",
+       certificateImageUrl: rwCertificate,
        certificateName: "Remote Work Professional Certification - RWPC™",
        issuerName: "CertiProf"
     },
     {
-        certificateImageUrl: "./img/badges/scrum-certification.png",
+        certificateImageUrl: sfCertificate,
         certificateName: "Scrum Foundation Professional Certification - SFPC™ (v2020)",
         issuerName: "CertiProf"
     },
     {
-        certificateImageUrl: "./img/badges/it-essential-cisco-certification.png",
+        certificateImageUrl: itCertificate,
         certificateName: "IT Essentials - Networking Academy",
         issuerName: "Cisco"
      }
@@ -65,7 +72,7 @@ function AboutPage() {
 
                 <div className="column">
                     <figure className="image started-image is-5by3 v-centered">
-                        <img className='image-border' src="./img/me-talking-in-public.jpg" alt="Edwin Roman into the computer science faculty" />
+                        <img className='image-border' src={meTalkingImage} alt="Edwin Roman into the computer science faculty" />
                     </figure>
                 </div>
 

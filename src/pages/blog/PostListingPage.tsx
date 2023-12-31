@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import './PostListingPage.css'
 import MessageBox from '../../components/Messagebox/MessageBox';
+import meTalkingImage from '../../assets/img/me-talking-in-public.jpg';
+import recivingDiplomaImage from '../../assets/img/reciving-diploma.jpg';
+import manConfusedImg from '../../assets/img/blog/confused-man-with-illustration.jpg'
+
 
 function PostListingPage() {
 
@@ -17,7 +21,7 @@ function PostListingPage() {
         <hr />
 
         <article className="postpreview-container">
-            <img src={"./img/me-talking-in-public.jpg"}></img>
+            <img src={meTalkingImage}></img>
             <div className='content'>
                 <Link to={"consejos-para-un-junior-developer-potenciando-tu-carrera"}>
                   <h2 className='is-size-5'>
@@ -30,7 +34,7 @@ function PostListingPage() {
         </article>
 
         <article className="postpreview-container">
-            <img src={"./img/reciving-diploma.JPG"}></img>
+            <img src={recivingDiplomaImage}></img>
             <div className='content'>
                 <Link to={"consejos-para-un-junior-developer-potenciando-tu-carrera"}>
                   <h2 className='is-size-5'>
@@ -43,7 +47,7 @@ function PostListingPage() {
         </article>
 
         <article className="postpreview-container">
-            <img src={"./img/confused-man-with-illustration.jpg"}></img>
+            <img src={manConfusedImg}></img>
             <div className='content'>
                 <h2 className='is-size-5'>
                     ¿Especialización o aspirar a Full-Stack cuando se esta iniciando?
