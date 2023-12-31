@@ -1,0 +1,32 @@
+.postpreview-container{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3rem;
+
+    max-width:100%;
+    margin-bottom: 24px;    
+    border-bottom: 0.02rem solid #33333310;
+
+    text-overflow: ellipsis;
+    text-wrap: pretty;
+}
+
+.postpreview-container > img {
+    max-width:100%;
+    max-height: 250px;
+    min-width: 320px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.2rem;
+}
+
+
+@media (width <= 768px) {
+    .postpreview-container{
+        flex-wrap: wrap;
+    }
+}
