@@ -1,11 +1,15 @@
 import './App.css'
 import 'bulma/css/bulma.min.css';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import SkeletonPage from './pages/SkeletonPage';
+import AboutPage from './pages/AboutPage';
+import BlogLayoutPage from './pages/blog/BlogLayoutPage';
+import ContactPage from './pages/ContactPage';
+import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
-import ErrorPage from './pages/ErrorPage';
-import AboutPage from './pages/AboutPage';
+import PostListingPage from './pages/blog/PostListingPage';
+import SkeletonPage from './pages/SkeletonPage';
+import WorkingInProgressPage from './pages/shared/WorkingInProgressPage';
 
 const appBrowserRouter = createBrowserRouter([
   {
@@ -18,8 +22,30 @@ const appBrowserRouter = createBrowserRouter([
         element: <HomePage/>
       },
       {
-        path: '/sobre-mi',
+        path: 'sobre-mi',
         element: <AboutPage/>
+      },
+      {
+        path: 'blog',
+        element: <BlogLayoutPage></BlogLayoutPage>,
+        children: [
+          {
+            index: true,
+            element: <PostListingPage/>
+          },
+          {
+            path: 'consejos-para-un-junior-developer-potenciando-tu-carrera',
+            element: <WorkingInProgressPage/>,
+          }
+        ]
+      },
+      {
+        path: 'portafolio',
+        element: <WorkingInProgressPage/>
+      },
+      {
+        path: 'contacto',
+        element: <ContactPage/>
       },
       {
         path: '*',
