@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './PostListingPage.css'
+import MessageBox from '../../components/Messagebox/MessageBox';
 
 function PostListingPage() {
 
@@ -8,6 +9,8 @@ function PostListingPage() {
       <h3 className="title">
         Blog:
       </h3>
+
+      <MessageBox color='is-info' headerTitle='Importante:' message='Este blog esta siendo migrado a otra tecnología...'/>
 
       <div className="content">
         <h3>{ "Últimos post" }:</h3>
@@ -34,7 +37,7 @@ function PostListingPage() {
                       ¡Cómo sobre vivir a una carrera técnica, sin morir en el intento!
                   </h2>
                 </Link>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum quisquam fugiat consequuntur officia praesentium, ad doloribus optio asperiores incidunt magni nobis, perspiciatis dicta numquam aut ut neque illo provident ullam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, eligendi quo! Ullam dignissimos architecto eos, minus similique voluptates id. Aspernatur, inventore voluptates dolorum laborum doloremque ratione assumenda. Quam, perferendis iusto?</p>
+                <p>Saludos estimado lector/a, les informamos que nuestro blog se encuentra en proceso de migración a una nueva plataforma. Por esta razón, es posible que algunos contenidos no se muestren correctamente. Estamos trabajando para resolver este inconveniente lo antes posible. Agradecemos su paciencia y comprensión.</p>
                 <p><b>Fecha:</b> 28 noviembre 2023</p>
             </div>
         </article>
