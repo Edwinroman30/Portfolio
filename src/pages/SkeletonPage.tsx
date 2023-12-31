@@ -9,7 +9,7 @@ function SkeletonPage() {
     <>
       <Navbar/>
 
-      <section className="is-large py-6">
+      <section className="is-large pt-6">
         <Outlet/>
       </section>
       
