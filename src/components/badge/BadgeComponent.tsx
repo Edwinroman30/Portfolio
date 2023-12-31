@@ -11,7 +11,7 @@ const BadgeComponent: FC<BadgeComponentProps> = ( props ) => {
     const { badge } = props;
 
     return ( 
-        <article className='badge-container'>
+        <article className='badge-container is-info'>
             <figure className='badge-figure'>
                 <img src={badge.certificateImageUrl} alt={badge.certificateName} className='badge-image' />
             </figure>
