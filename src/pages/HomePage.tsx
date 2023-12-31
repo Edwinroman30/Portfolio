@@ -61,6 +61,42 @@ function HomePage() {
           </div>
       </section> 
       
+      <section className='section my-5'>
+         <article className='level'>
+            <div className="level-item has-text-centered">
+              <Link to={"/sobre-mi"}>
+                <p className="title">
+                🤵
+                </p>
+                <hr />
+                <p className='title'>¿Quién eres?</p>
+                <hr />
+              </Link>
+            </div>
+
+            <div className="level-item has-text-centered">
+              <Link to={"/portafolio"}>
+                <p className="title">
+                🚀
+                </p>
+                <hr />
+                <p className='title'>¿Qué haz hecho?</p>
+                <hr />
+              </Link>
+            </div>
+
+            <div className="level-item has-text-centered">
+              <Link to='/contacto'>
+                <p className="title">
+                  💬
+                </p>
+                <hr />
+                <p className='title'>¿Cómo te contacto?</p>
+                <hr />
+              </Link>
+            </div>
+         </article>
+      </section>
 
     </div>
   )
