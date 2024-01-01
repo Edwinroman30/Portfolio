@@ -1,8 +1,12 @@
 import { IoMdMailOpen } from 'react-icons/io';
 import './ContactPage.css';
-import { FormEvent } from 'react';
+import { FormEvent, useEffect } from 'react';
 
 function ContactPage() {
+
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[]);
 
   const handlerSummit = (e: FormEvent) =>{
     e.preventDefault();
@@ -17,7 +21,7 @@ function ContactPage() {
           
           <div className="column  is-one-third-desktop">
             <h3 className='label'>Medios:</h3>
-            <p>Si el servicio de formulario no le es confiable, puede escribirme al siguiente correo:</p>
+            <p>Estamos trabajando para mejorar el formulario de envios de mensajes, puede contactarme también por los medios especificados como Linkedin o escribirme al siguiente correo:</p>
             <hr />
             
             <div className='has-text-centered'>

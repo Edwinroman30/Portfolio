@@ -1,5 +1,5 @@
 import './HomePage.css';
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import LanguageContext from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 import recivingDiplomaImg from '../assets/img/reciving-diploma.jpg'
@@ -8,6 +8,10 @@ import recivingMedalImg from '../assets/img/reciving-medal.jpg'
 
 function HomePage() {
   
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[]);
+
   const {language} = useContext(LanguageContext);
   const imgToggler = useRef<boolean>(false);
 
@@ -23,9 +27,9 @@ function HomePage() {
 
 
   return (
-    <div>
+    <section>
 
-      <section className='section columns is-vcentered'>
+      <article className='section columns is-vcentered'>
 
          <div className="column">
             <h1 className='title is-2'>{language.home.greatingTitle}</h1>
@@ -50,9 +54,9 @@ function HomePage() {
               <img className="image banner-image" src={recivingMedalImg}  onMouseEnter={handlerHover} />
             </figure>
          </div>
-      </section>
+      </article>
 
-       <section className="hero is-info">
+       <article className="hero is-info">
           <div className="hero-body">
               <blockquote className='title'>
                 “Si quieres ir rápido, ve solo. Si quieres llegar lejos, ve acompañado.”
@@ -60,11 +64,11 @@ function HomePage() {
             <p className="subtitle">
                Proverbio africano
             </p>
-            <button className='button'>{language.home.callToActionButtonText}</button>
+            <Link to={"/contacto"} className='button'>{language.home.callToActionButtonText}</Link>
           </div>
-      </section> 
+      </article> 
       
-      <section className='section my-5'>
+      <article className='section my-5'>
          <article className='level'>
             <div className="level-item has-text-centered">
               <Link to={"/sobre-mi"}>
@@ -99,9 +103,9 @@ function HomePage() {
               </Link>
             </div>
          </article>
-      </section>
+      </article>
 
-    </div>
+    </section>
   )
 }
 

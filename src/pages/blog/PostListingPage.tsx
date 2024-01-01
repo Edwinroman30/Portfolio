@@ -4,9 +4,14 @@ import MessageBox from '../../components/Messagebox/MessageBox';
 import meTalkingImage from '../../assets/img/me-talking-in-public.jpg';
 import recivingDiplomaImage from '../../assets/img/reciving-diploma.jpg';
 import manConfusedImg from '../../assets/img/blog/confused-man-with-illustration.jpg'
+import { useEffect } from 'react';
 
 
 function PostListingPage() {
+
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[]);
 
   return (
     <section className="section">

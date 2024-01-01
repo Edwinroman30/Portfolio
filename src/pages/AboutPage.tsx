@@ -10,7 +10,7 @@ import meTalkingImage from '../assets/img/me-talking-in-public.jpg';
 
 import { IExperice } from '../types/experices';
 import { IoIosDocument } from "react-icons/io";
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import IBadgeInfo from '../components/types/IBadgeInfo';
 import BadgeComponent from '../components/badge/BadgeComponent';
 
@@ -44,141 +44,145 @@ experices = experices.sort((x, y) => x.endDate > y.endDate ? -1 : 1);
 
 function AboutPage() {
   
-  const badgeRef = useRef<IBadgeInfo[]>([
-    {
-       certificateImageUrl: rwCertificate,
-       certificateName: "Remote Work Professional Certification - RWPC™",
-       issuerName: "CertiProf"
-    },
-    {
-        certificateImageUrl: sfCertificate,
-        certificateName: "Scrum Foundation Professional Certification - SFPC™ (v2020)",
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[]);
+    
+    const badgeRef = useRef<IBadgeInfo[]>([
+        {
+        certificateImageUrl: rwCertificate,
+        certificateName: "Remote Work Professional Certification - RWPC™",
         issuerName: "CertiProf"
-    },
-    {
-        certificateImageUrl: itCertificate,
-        certificateName: "IT Essentials - Networking Academy",
-        issuerName: "Cisco"
-     }
-  ]);
+        },
+        {
+            certificateImageUrl: sfCertificate,
+            certificateName: "Scrum Foundation Professional Certification - SFPC™ (v2020)",
+            issuerName: "CertiProf"
+        },
+        {
+            certificateImageUrl: itCertificate,
+            certificateName: "IT Essentials - Networking Academy",
+            issuerName: "Cisco"
+        }
+    ]);
 
-  return (
-    <section className='container'>
-        
-        <article className="section">
-            <h1 className='title is-1 text-right'>Hola 👋🏻</h1>
-            <hr></hr>
-            <div className="columns">
+    return (
+        <section className='container'>
+            
+            <article className="section">
+                <h1 className='title is-1 text-right'>Hola 👋🏻</h1>
+                <hr></hr>
+                <div className="columns">
 
-                <div className="column">
-                    <figure className="image started-image is-5by3 v-centered">
-                        <img className='image-border' src={meTalkingImage} alt="Edwin Roman into the computer science faculty" />
-                    </figure>
-                </div>
-
-                <div className="column">
-                    <div className="content is-medium">
-                        <p>Desde 2018 cuenta con experiencia en el desarrollo de aplicaciones y sistemas de información. Edwin Roman, desarrollador de software que disfruta transformar las operaciones industriales y de nuestro diario vivir, en soluciones adaptativas y confiables.</p>
-                        <p>Él mismo se considera una persona curiosa, proactiva y analítica, cuyos intereses estan en el constante flujo de aprender y compartir experiencias adquiridas con aquellos interesados.</p>
-                    </div>
-                </div>
-                
-            </div>
-        </article>
-        
-        <article className="section">
-            <h1 className='title is-3 text-left mt-3'>🏆 Lugares donde he aportado valor:</h1>
-            <hr></hr>
-
-            <div className='section'>
-
-                {experices.map((data, idx) => (
-                    <div className="grid-container mb-4" key={`${idx}-${data.companyName}`}>
-                        <figure>
-                            <img src={data.companyLogoURL} style={{maxWidth:'100%', maxHeight:'150px'}}></img>
+                    <div className="column">
+                        <figure className="image started-image is-5by3 v-centered">
+                            <img className='image-border' src={meTalkingImage} alt="Edwin Roman into the computer science faculty" />
                         </figure>
-                        <div>
-                            <h2 className='is-size-5'>
-                                <b>{data.role}</b> <span className='is-size-6'> ({data.startDate.getFullYear()} - {data.endDate.getFullYear()}) </span>
-                            </h2>
-                            <p>{data.description}</p>
+                    </div>
+
+                    <div className="column">
+                        <div className="content is-medium">
+                            <p>Desde 2018 cuenta con experiencia en el desarrollo de aplicaciones y sistemas de información. Edwin Roman, desarrollador de software que disfruta transformar las operaciones industriales y de nuestro diario vivir, en soluciones adaptativas y confiables.</p>
+                            <p>Él mismo se considera una persona curiosa, proactiva y analítica, cuyos intereses estan en el constante flujo de aprender y compartir experiencias adquiridas con aquellos interesados.</p>
                         </div>
                     </div>
-                ))}
-
-            </div>
+                    
+                </div>
+            </article>
             
-            <div className="text-center">
-                <a href={curriculumSource} target="_blank" className="button is-medium is-info">
-                    <IoIosDocument></IoIosDocument>
-                     Currilucum (CV)
-                </a>
-            </div>
+            <article className="section">
+                <h1 className='title is-3 text-left mt-3'>🏆 Lugares donde he aportado valor:</h1>
+                <hr></hr>
 
-        </article>
+                <div className='section'>
 
-        <article className="section">
-            <h1 className='title is-3 text-right mt-3'>🏆 Conocimientos validados por:</h1>
-            <hr></hr>
+                    {experices.map((data, idx) => (
+                        <div className="grid-container mb-4" key={`${idx}-${data.companyName}`}>
+                            <figure>
+                                <img src={data.companyLogoURL} style={{maxWidth:'100%', maxHeight:'150px'}}></img>
+                            </figure>
+                            <div>
+                                <h2 className='is-size-5'>
+                                    <b>{data.role}</b> <span className='is-size-6'> ({data.startDate.getFullYear()} - {data.endDate.getFullYear()}) </span>
+                                </h2>
+                                <p>{data.description}</p>
+                            </div>
+                        </div>
+                    ))}
 
-            <div className="columns is-multiline is-mobile" >
-                {
-                    badgeRef.current.map((data, index) => (
-                     <div className="column is-full-mobile is-half-tablet is-half-desktop" key={`${data.issuerName}-${index}`}>
-                        <BadgeComponent badge={data}></BadgeComponent>
-                     </div>
-                    ))
-                }                         
-            </div>
-            <p className='text-center'>
-                Entre otros diplomas y certificado...
-            </p>
-        </article>
-
-        <article className="section">
-            <h1 className='title is-3 text-left mt-3'>🎢 Mas allá del trabajo:</h1>
-            <hr></hr>
-
-            <div className="columns" style={{textAlign:"center"}}>
-                <div className="column content is-large">
-                    <h1>🏀</h1>
-                    <p>¡Me gusta el baloncesto!</p>
                 </div>
-                <div className="column content is-large">
-                    <h1>🔭⚙</h1>
-                    <p>¡Las series de Ingeniería y ciencias!</p>
+                
+                <div className="text-center">
+                    <a href={curriculumSource} target="_blank" className="button is-medium is-info">
+                        <IoIosDocument></IoIosDocument>
+                        Currilucum (CV)
+                    </a>
                 </div>
-                <div className="column content is-large">
-                    <h1>🗿</h1>
-                    <p>¡Estudiar idiomas y culturas!</p>
-                </div>
-            </div>
-        </article>
 
-        <article className='section'>
+            </article>
 
-            <h1 className='title is-3 text-right mt-3'>📹 Sobre mi You Tube Channel:</h1>
-            
-            <div className="columns">
-                <div className="column content is-large">
-                   <iframe width="100%" height="315" src="https://www.youtube.com/embed/TFZWamWmhEk?si=YjxKpXB-KBBIhEYG&amp;start=27" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; allowfullscreen;"></iframe>
+            <article className="section">
+                <h1 className='title is-3 text-right mt-3'>🏆 Conocimientos validados por:</h1>
+                <hr></hr>
+
+                <div className="columns is-multiline is-mobile" >
+                    {
+                        badgeRef.current.map((data, index) => (
+                        <div className="column is-full-mobile is-half-tablet is-half-desktop" key={`${data.issuerName}-${index}`}>
+                            <BadgeComponent badge={data}></BadgeComponent>
+                        </div>
+                        ))
+                    }                         
                 </div>
-                <div className="column">
-                    <div className="content is-medium">
-                        <p>
-                            Mi pasión por la tecnología se ha fusionado con mi deseo de compartir conocimiento y fomentar el aprendizaje en la comunidad de TI. Cada línea de código que escribo y video que comparto en YouTube, son pensado con el fin de seguir aportando a la expansion del conocimiento. 
-                        </p>
-                        <p className='text-center'>
-                            Creo fervientemente que el conocimiento compartido es un faro que guía a la innovación y el progreso. Aspiro a inspirar a otros a abrazar la curiosidad, a desafiar límites y a contribuir cosas ingreibles con la tecnológia!"                     
-                        </p>
+                <p className='text-center'>
+                    Entre otros diplomas y certificado...
+                </p>
+            </article>
+
+            <article className="section">
+                <h1 className='title is-3 text-left mt-3'>🎢 Mas allá del trabajo:</h1>
+                <hr></hr>
+
+                <div className="columns" style={{textAlign:"center"}}>
+                    <div className="column content is-large">
+                        <h1>🏀</h1>
+                        <p>¡Me gusta el baloncesto!</p>
+                    </div>
+                    <div className="column content is-large">
+                        <h1>🔭⚙</h1>
+                        <p>¡Las series de Ingeniería y ciencias!</p>
+                    </div>
+                    <div className="column content is-large">
+                        <h1>🗿</h1>
+                        <p>¡Estudiar idiomas y culturas!</p>
                     </div>
                 </div>
-            </div>
+            </article>
 
-        </article> 
+            <article className='section'>
 
-    </section>
-  );
+                <h1 className='title is-3 text-right mt-3'>📹 Sobre mi You Tube Channel:</h1>
+                
+                <div className="columns">
+                    <div className="column content is-large">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/TFZWamWmhEk?si=YjxKpXB-KBBIhEYG&amp;start=27" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; allowfullscreen;"></iframe>
+                    </div>
+                    <div className="column">
+                        <div className="content is-medium">
+                            <p>
+                                Mi pasión por la tecnología se ha fusionado con mi deseo de compartir conocimiento y fomentar el aprendizaje en la comunidad de TI. Cada línea de código que escribo y video que comparto en YouTube, son pensado con el fin de seguir aportando a la expansion del conocimiento. 
+                            </p>
+                            <p className='text-center'>
+                                Creo fervientemente que el conocimiento compartido es un faro que guía a la innovación y el progreso. Aspiro a inspirar a otros a abrazar la curiosidad, a desafiar límites y a contribuir cosas ingreibles con la tecnológia!"                     
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </article> 
+
+        </section>
+    );
 
 }
 
